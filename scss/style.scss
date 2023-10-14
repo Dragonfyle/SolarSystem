@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.stars {
+    position: absolute;
+    object-fit: none;
+}
+
+.background {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(10, 10, 20);
+    overflow: hidden;
+    &__stars--layer1 {
+        z-index: 1;
+        left: -15%;
+        top: -15%;
+    }
+    &__stars--layer2 {
+        z-index: 2;
+        left: -10%;
+        top: -10%;
+    }
+    &__stars--layer3 {
+        z-index: 3;
+        left: 0;
+        top: 0;
+    }
+    &__stars--layer4 {
+        z-index: 4;
+        left: 10%;
+        top: 10%;
+    }
+    &__stars--layer4 {
+        z-index: 4;
+        left: 15%;
+        top: 15%;
+    }
+    &__planet {
+        z-index: 2;
+        left: 35%;
+        top: 50%;
+        width: 10%;
+        object-fit: contain;
+        filter: contrast(80%);
+        filter:blur();
+    }
+}
