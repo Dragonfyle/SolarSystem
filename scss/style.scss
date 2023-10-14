@@ -112,27 +112,27 @@
     }
     &__stars--layer1 {
         z-index: 1;
-        left: -15%;
-        top: -15%;
+        left: -45%;
+        top: -45%;
     }
     &__stars--layer2 {
         z-index: 2;
-        left: -10%;
-        top: -10%;
+        left: -35%;
+        top: -35%;
     }
     &__stars--layer3 {
         z-index: 3;
+        left: -25%;
+        top: -25%;
+    }
+    &__stars--layer4 {
+        z-index: 4;
+        left: -10%;
+        top: -10%;
+    }
+    &__stars--layer5 {
+        z-index: 4;
         left: 0;
         top: 0;
-    }
-    &__stars--layer4 {
-        z-index: 4;
-        left: 10%;
-        top: 10%;
-    }
-    &__stars--layer4 {
-        z-index: 4;
-        left: 15%;
-        top: 15%;
     }
 }
