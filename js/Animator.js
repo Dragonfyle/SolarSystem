@@ -2,7 +2,6 @@ export default class Animator {
   #stars;
   #TRANSLATE_MULTIPLIER = 0.05;
   constructor() {
-    // this.#TRANSLATE_MULTIPLIER = 0.1;
     this.#stars = document.querySelectorAll('.bodies');
 
     window.addEventListener('DOMContentLoaded', (e) => {
