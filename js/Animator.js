@@ -3,7 +3,7 @@ export default class Animator {
   #TRANSLATE_MULTIPLIER = 0.05;
   constructor() {
     // this.#TRANSLATE_MULTIPLIER = 0.1;
-    this.#stars = document.querySelectorAll('.stars');
+    this.#stars = document.querySelectorAll('.bodies');
 
     window.addEventListener('DOMContentLoaded', (e) => {
       this.#handleMove(e);
@@ -24,7 +24,6 @@ export default class Animator {
   }
 
   #handleMove(e) {
-    console.log(e.clientX);
     this.#stars.forEach((image) => {
       this.#translateElement(image, e);
     });
