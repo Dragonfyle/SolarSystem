@@ -9,26 +9,145 @@
 <body>
     <div class="spinner"></div>
     <div class="overlay"></div>
-    <div class="background">
-        <img src="img/sun.png" alt="sky" class="bodies background__sun" ratioX="0.3" ratioY="0.3">
-        <img src="img/mercury.png" alt="sky" class="bodies background__mercury" ratioX="18" ratioY="18">
-        <img src="img/venus.png" alt="sky" class="bodies background__venus" ratioX="7" ratioY="7">
-        <img src="img/earth.png" alt="sky" class="bodies background__earth" ratioX="6" ratioY="6">
-        <img src="img/mars.png" alt="sky" class="bodies background__mars" ratioX="9" ratioY="9">
-        <img src="img/jupiter.png" alt="sky" class="bodies background__jupiter" ratioX="0.7" ratioY="0.65">
-        <img src="img/saturn.png" alt="sky" class="bodies background__saturn" ratioX="0.4" ratioY="0.4">
-        <img src="img/Uranus.png" alt="sky" class="bodies background__uranus" ratioX="4" ratioY="4">
-        <img src="img/neptune.png" alt="sky" class="bodies background__neptune" ratioX="0.01" ratioY="0.01">
-        <img src="img/jupiterMoon1.png" alt="sky" class="bodies background__jupiter-moon1" ratioX="11" ratioY="11">
-        <img src="img/jupiterMoon2.png" alt="sky" class="bodies background__jupiter-moon2" ratioX="8" ratioY="8">
-        <img src="img/jupiterMoon3.png" alt="sky" class="bodies background__jupiter-moon3" ratioX="8" ratioY="8">
-        <img src="img/jupiterMoon4.png" alt="sky" class="bodies background__jupiter-moon4" ratioX="10" ratioY="10">
-        <img src="img/saturnMoon.png" alt="sky" class="bodies background__saturn-moon" ratioX="3.5" ratioY="3.5">
-        <img src="img/stars.png" alt="stars" class="bodies background__stars--layer1" ratioX="0.0004" ratioY="0.0004">
-        <img src="img/starsX.png" alt="stars" class="bodies background__stars--layer2" ratioX="0.003" ratioY="0.003">
-        <img src="img/starsY.png" alt="stars" class="bodies background__stars--layer3" ratioX="0.01" ratioY="0.01">
-        <img src="img/starsX.png" alt="stars" class="bodies background__stars--layer4" ratioX="0.05" ratioY="0.05">
-        <img src="img/starsXY.png" alt="stars" class="bodies background__stars--layer5" ratioX="0.12" ratioY="0.12">
+    <div class="space">
+        <img src="img/sun.png" alt="sky" class="bodies space__sun" data-name="sun" ratioX="0.3" ratioY="0.3">
+        <div class="bodies space__sun--overlay" data-name="sun" data-name="sun" ratioX="0.3" ratioY="0.3"></div>
+        <img src="img/mercury.png" alt="sky" class="bodies space__mercury" data-name="mercury" ratioX="18" ratioY="18">
+        <div class="bodies space__mercury--overlay" data-name="mercury" data-name="mercury" ratioX="18" ratioY="18"></div>
+        <img src="img/venus.png" alt="sky" class="bodies space__venus" data-name="venus" ratioX="7" ratioY="7">
+        <div class="bodies space__venus--overlay " data-name="venus" ratioX="7" ratioY="7"></div>
+        <img src="img/earth.png" alt="sky" class="bodies space__earth" data-name="earth" ratioX="6" ratioY="6">
+        <div class="bodies space__earth--overlay " data-name="earth" ratioX="6" ratioY="6"></div>
+        <img src="img/mars.png" alt="sky" class="bodies space__mars" data-name="mars" ratioX="9" ratioY="9">
+        <div class="bodies space__mars--overlay" data-name="mars" ratioX="9" ratioY="9"></div>
+        <img src="img/jupiter.png" alt="sky" class="bodies space__jupiter" ratioX="0.7" ratioY="0.7">
+        <div class="bodies space__jupiter--overlay" data-name="jupiter" ratioX="0.7" ratioY="0.7"></div>
+        <img src="img/saturn.png" alt="sky" class="bodies space__saturn" data-name="saturn" ratioX="0.4" ratioY="0.4">
+        <div class="bodies space__saturn--overlay" data-name="saturn" ratioX="0.4" ratioY="0.4"></div>
+        <img src="img/Uranus.png" alt="sky" class="bodies space__uranus" ratioX="4" ratioY="4">
+        <div class="bodies space__uranus--overlay" data-name="uranus"ratioX="4" ratioY="4"></div>
+        <img src="img/neptune.png" alt="sky" class="bodies space__neptune" data-name="neptune" ratioX="0.01" ratioY="0.01">
+        <div class="bodies space__neptune--overlay" data-name="neptune" ratioX="0.01" ratioY="0.01"></div>
+        <img src="img/jupiterMoon1.png" alt="sky" class="bodies space__jupiter-moon1" ratioX="9.5" ratioY="9.5">
+        <img src="img/jupiterMoon2.png" alt="sky" class="bodies space__jupiter-moon2" ratioX="8" ratioY="8">
+        <img src="img/jupiterMoon3.png" alt="sky" class="bodies space__jupiter-moon3" ratioX="8" ratioY="8">
+        <img src="img/jupiterMoon4.png" alt="sky" class="bodies space__jupiter-moon4" ratioX="10" ratioY="10">
+        <img src="img/saturnMoon.png" alt="sky" class="bodies space__saturn-moon" ratioX="3.5" ratioY="3.5">
+        <img src="img/stars.png" alt="stars" class="bodies space__stars--layer1" ratioX="0.0004" ratioY="0.0004">
+        <img src="img/starsX.png" alt="stars" class="bodies space__stars--layer2" ratioX="0.003" ratioY="0.003">
+        <img src="img/starsY.png" alt="stars" class="bodies space__stars--layer3" ratioX="0.01" ratioY="0.01">
+        <img src="img/starsX.png" alt="stars" class="bodies space__stars--layer4" ratioX="0.05" ratioY="0.05">
+        <img src="img/starsXY.png" alt="stars" class="bodies space__stars--layer5" ratioX="0.12" ratioY="0.12">
+    </div>
+    <div class="descriptions">
+        <div class="descriptions__sun">
+            <ul class="descriptions__list--sun">
+                <li class="header descriptions__header--sun">sun</li>
+                <li class="data descriptions__data--sun"></li>
+                <li class="data descriptions__data--sun"></li>
+                <li class="data descriptions__data--sun"></li>
+                <li class="data descriptions__data--sun"></li>
+                <li class="data descriptions__data--sun"></li>
+                <li class="data descriptions__data--sun"></li>
+                <li class="data descriptions__data--sun"></li>
+            </ul>
+        </div>
+        <div class="descriptions__mercury">
+            <ul class="descriptions__list--mercury">
+                <li class="header descriptions__header--mercury">mercury</li>
+                <li class="data descriptions__data--mercury">data</li>
+                <li class="data descriptions__data--mercury">data</li>
+                <li class="data descriptions__data--mercury">data</li>
+                <li class="data descriptions__data--mercury">data</li>
+                <li class="data descriptions__data--mercury">data</li>
+                <li class="data descriptions__data--mercury">data</li>
+                <li class="data descriptions__data--mercury">data</li>
+            </ul>
+        </div>
+        <div class="descriptions__venus">
+            <ul class="descriptions__list--venus">
+                <li class="header descriptions__header--venus">venus</li>
+                <li class="descriptions__data--venus"></li>
+                <li class="descriptions__data--venus"></li>
+                <li class="descriptions__data--venus"></li>
+                <li class="descriptions__data--venus"></li>
+                <li class="descriptions__data--venus"></li>
+                <li class="descriptions__data--venus"></li>
+                <li class="descriptions__data--venus"></li>
+            </ul>
+        </div>
+        <div class="descriptions__earth">
+            <ul class="descriptions__list--earth">
+                <li class="header descriptions__header--earth">earth</li>
+                <li class="data descriptions__data--earth">data</li>
+                <li class="data descriptions__data--earth">data</li>
+                <li class="data descriptions__data--earth">data</li>
+                <li class="data descriptions__data--earth">data</li>
+                <li class="data descriptions__data--earth">data</li>
+                <li class="data descriptions__data--earth">data</li>
+                <li class="data descriptions__data--earth">data</li>
+            </ul>
+        </div>
+        <div class="descriptions__mars">
+            <ul class="descriptions__list--mars">
+                <li class="header descriptions__header--mars">mars</li>
+                <li class="data descriptions__data--mars"></li>
+                <li class="data descriptions__data--mars"></li>
+                <li class="data descriptions__data--mars"></li>
+                <li class="data descriptions__data--mars"></li>
+                <li class="data descriptions__data--mars"></li>
+                <li class="data descriptions__data--mars"></li>
+                <li class="data descriptions__data--mars"></li>
+            </ul>
+        </div>
+        <div class="descriptions__jupiter">
+            <ul class="descriptions__list--jupiter">
+                <li class="header descriptions__header--jupiter">jupiter</li>
+                <li class="data descriptions__data--jupiter">data</li>
+                <li class="data descriptions__data--jupiter">data</li>
+                <li class="data descriptions__data--jupiter">data</li>
+                <li class="data descriptions__data--jupiter">data</li>
+                <li class="data descriptions__data--jupiter">data</li>
+                <li class="data descriptions__data--jupiter">data</li>
+                <li class="data descriptions__data--jupiter">data</li>
+            </ul>
+        </div>
+        <div class="descriptions__saturn">
+            <ul class="descriptions__list--saturn">
+                <li class="header descriptions__header--saturn">saturn</li>
+                <li class="data descriptions__data--saturn">data</li>
+                <li class="data descriptions__data--saturn">data</li>
+                <li class="data descriptions__data--saturn">data</li>
+                <li class="data descriptions__data--saturn">data</li>
+                <li class="data descriptions__data--saturn">data</li>
+                <li class="data descriptions__data--saturn">data</li>
+                <li class="data descriptions__data--saturn">data</li>
+            </ul>
+        </div>
+        <div class="descriptions__uranus">
+            <ul class="descriptions__list--uranus">
+                <li class="header descriptions__header--uranus">uranus</li>
+                <li class="data descriptions__data--uranus">data</li>
+                <li class="data descriptions__data--uranus">data</li>
+                <li class="data descriptions__data--uranus">data</li>
+                <li class="data descriptions__data--uranus">data</li>
+                <li class="data descriptions__data--uranus">data</li>
+                <li class="data descriptions__data--uranus">data</li>
+                <li class="data descriptions__data--uranus">data</li>
+            </ul>
+        </div>
+        <div class="descriptions__neptune">
+            <ul class="descriptions__list--neptune">
+                <li class="header descriptions__header--neptune">neptune</li>
+                <li class="data descriptions__data--neptune">data</li>
+                <li class="data descriptions__data--neptune">data</li>
+                <li class="data descriptions__data--neptune">data</li>
+                <li class="data descriptions__data--neptune">data</li>
+                <li class="data descriptions__data--neptune">data</li>
+                <li class="data descriptions__data--neptune">data</li>
+                <li class="data descriptions__data--neptune">data</li>
+            </ul>
+        </div>
     </div>
     <script src="./js/main.js" type="module"></script>
 </body>
