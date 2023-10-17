@@ -279,17 +279,19 @@
     left: 0;
     top: 0;
     pointer-events: none;
+    font-weight: bold;
+    line-height: 140%;
     &__sun {
         position: inherit;
         width: 15vw;
         height: 20vh;
         left: 75%;
         top: 5%;
-        // transition: width linear .1s, transform cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        animation: scale .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         animation-direction: normal;
         animation-play-state: paused;
         z-index: 7;
+        overflow: hidden;
         }
     &__list--sun {
         display: block;
@@ -304,7 +306,11 @@
         height: 20vh;
         left: 50%;
         top: 50%;
-        transition: width linear .1s;
+        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        animation-direction: normal;
+        animation-play-state: paused;
+        z-index: 7;
+        overflow: hidden;
         }
     &__list--mercury {
         display: block;
@@ -319,7 +325,11 @@
         height: 20vh;
         left: 80%;
         top: 17%;
-        transition: width linear .1s;
+        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        animation-direction: normal;
+        animation-play-state: paused;
+        z-index: 7;
+        overflow: hidden;
         }
     &__list--venus {
         display: block;
@@ -334,7 +344,11 @@
         height: 20vh;
         left: 82%;
         top: 15%;
-        transition: width linear .1s;
+        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        animation-direction: normal;
+        animation-play-state: paused;
+        z-index: 7;
+        overflow: hidden;
         }
     &__list--earth {
         display: block;
@@ -349,7 +363,11 @@
         height: 20vh;
         left: 30%;
         top: 30%;
-        transition: width linear .1s;
+        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        animation-direction: normal;
+        animation-play-state: paused;
+        z-index: 7;
+        overflow: hidden;
         }
     &__list--mars {
         display: block;
@@ -364,7 +382,11 @@
         height: 20vh;
         left: 30%;
         top: 5%;
-        transition: width linear .1s;
+        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        animation-direction: normal;
+        animation-play-state: paused;
+        z-index: 7;
+        overflow: hidden;
         }
     &__list--saturn {
         display: block;
@@ -379,7 +401,11 @@
         height: 20vh;
         left: 30%;
         top: 5%;
-        transition: width linear .1s;
+        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        animation-direction: normal;
+        animation-play-state: paused;
+        z-index: 7;
+        overflow: hidden;
         }
     &__list--jupiter {
         display: block;
@@ -394,7 +420,11 @@
         height: 20vh;
         left: 82%;
         top: 20%;
-        transition: width linear .1s;
+        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        animation-direction: normal;
+        animation-play-state: paused;
+        z-index: 7;
+        overflow: hidden;
         }
     &__list--uranus {
         display: block;
@@ -409,7 +439,11 @@
         height: 20vh;
         left: 82%;
         top: 40%;
-        transition: width linear .1s;
+        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        animation-direction: normal;
+        animation-play-state: paused;
+        z-index: 7;
+        overflow: hidden;
         }
     &__list--neptune {
         display: block;
