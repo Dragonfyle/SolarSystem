@@ -1,10 +1,11 @@
 export default class Description {
+  //   static #isPlaying = false;
   #celestialBody;
   #description;
   #data;
   #header;
   #animation;
-  #isHidden;
+  #isHidden = true;
   #WIDTH = '15vw';
   #HIDDEN_WIDTH = '0vw';
   #DISPLAY = {
@@ -24,7 +25,6 @@ export default class Description {
     },
   };
   constructor(selector) {
-    this.#isHidden = true;
     this.#celestialBody = selector;
     this.#description = document.querySelector(
       `.descriptions__${selector.dataset.name}`
@@ -39,6 +39,9 @@ export default class Description {
     window.addEventListener('load', () => {
       this.#initListener();
     });
+    // this.#description.addEventListener('animationstart', () => {
+    //   this.#handleAnimStart();
+    // });
     this.#description.addEventListener('animationend', () => {
       this.#handleAnimEnd();
     });
@@ -54,6 +57,9 @@ export default class Description {
   }
 
   #showDescription() {
+    // if (Description.#isPlaying) {
+    //   return;
+    // }
     this.widthNow = this.#WIDTH;
     this.#setAnimProperties({
       name: this.#ANIMATION.NAME,
@@ -62,6 +68,7 @@ export default class Description {
     });
     this.#setHeaderDisplay(this.#DISPLAY.BLOCK);
     this.#setDataDisplay(this.#DISPLAY.BLOCK);
+
     this.#isHidden = false;
   }
 
@@ -73,6 +80,7 @@ export default class Description {
     });
     this.#setHeaderDisplay(this.#DISPLAY.NONE);
     this.#setDataDisplay(this.#DISPLAY.NONE);
+
     this.#isHidden = true;
   }
 
@@ -111,8 +119,25 @@ export default class Description {
       name: this.#ANIMATION.NO_NAME,
       playState: this.#ANIMATION.PLAY_STATE.PAUSED,
     });
+
     this.#isHidden
       ? (this.widthNow = this.#HIDDEN_WIDTH)
       : (this.widthNow = this.#WIDTH);
+
+    // Description.#isPlaying = false;
   }
+
+  //   #handleAnimStart() {
+  // Description.#isPlaying = true;
+  //   }
+
+  //   static set isPlaying(boolean) {
+  // if (typeof boolean === 'boolean') {
+  //   Description.#isPlaying = boolean;
+  // }
+  //   }
+
+  //   static get isPlaying() {
+  // return Description.#isPlaying;
+  //   }
 }
