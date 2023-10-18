@@ -27,6 +27,12 @@ export default class Description extends Animations {
     DURATION: '.1s',
     TIMING_FUNCTION: 'linear',
   };
+  #BORDER = {
+    STYLE: {
+      NONE: 'none',
+      SOLID: 'solid',
+    },
+  };
   constructor(selector) {
     super();
     this.#celestialBody = selector;
@@ -53,6 +59,7 @@ export default class Description extends Animations {
     this.#initAnimProperties({
       delay: this.ANIMATION.DURATION,
       timing: this.ANIMATION.TIMING_FUNCTION,
+      border: this.#BORDER.NONE,
     });
   }
 
@@ -70,6 +77,7 @@ export default class Description extends Animations {
     //   return;
     // }
     this.widthNow = this.#WIDTH;
+    this.#setBorder(this.#BORDER.STYLE.SOLID);
     this.#setAnimProperties({
       name: this.ANIMATION.NAME,
       direction: this.ANIMATION.DIRECTION.NORMAL,
@@ -84,8 +92,8 @@ export default class Description extends Animations {
 
   #hideDescription() {
     this.#setAnimProperties({
-      name: this.ANIMATION.NAME,
       direction: this.ANIMATION.DIRECTION.REVERSE,
+      name: this.ANIMATION.NAME,
       playState: this.ANIMATION.PLAY_STATE.RUNNING,
     });
     this.#setHeaderDisplay(this.#DISPLAY.NONE);
@@ -96,6 +104,10 @@ export default class Description extends Animations {
 
   set widthNow(width) {
     this.#description.style.width = width;
+  }
+
+  #setBorder(border) {
+    this.#description.style.borderStyle = border;
   }
 
   #setAnimName(name) {
@@ -138,16 +150,23 @@ export default class Description extends Animations {
       playState: this.ANIMATION.PLAY_STATE.PAUSED,
     });
 
-    this.#isHidden
-      ? (this.widthNow = this.#HIDDEN_WIDTH)
-      : (this.widthNow = this.#WIDTH);
+    if (this.#isHidden) {
+      this.#setBorder(this.#BORDER.STYLE.NONE);
+      this.widthNow = this.#HIDDEN_WIDTH;
+    } else {
+      this.widthNow = this.#WIDTH;
+      //   this.#setBorder(this.#BORDER.STYLE.SOLID);
+    }
+
+    this.#isHidden;
 
     // Description.#isPlaying = false;
   }
 
-  #initAnimProperties({ delay, timing }) {
+  #initAnimProperties({ delay, timing, border }) {
     this.#setAnimDuration(delay);
     this.#setAnimTiming(timing);
+    this.#setBorder(border);
   }
 
   //   #handleAnimStart() {

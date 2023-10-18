@@ -7,7 +7,7 @@ export default class Animations {
         }
     
         2% {
-            transform: scaleX(0.4);
+            transform: scaleX(0.2);
         }
 
         100% {

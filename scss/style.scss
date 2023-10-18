@@ -17,7 +17,7 @@
     z-index: 5;
     width: 100%;
     height: 100%;
-    background-color: wheat;
+    background-color: $overlay-bgc;
 }
 
 .spinner {
@@ -27,10 +27,10 @@
     aspect-ratio: 1;
     left: 46%;
     top: 46%;
-    border-top: solid 10px beige;
-    border-bottom: solid 10px beige;
-    border-left: solid 10px beige;
-    border-right: solid 10px black;
+    border-top: $spinner-border-regular;
+    border-bottom: $spinner-border-regular;
+    border-left: $spinner-border-regular;
+    border-right: $spinner-border-mark;
     border-radius: 50%;
     animation: spinner 1s infinite linear;
 }
@@ -44,7 +44,7 @@
     position: relative;
     height: 100vh;
     width: 100vw;
-    background-color: rgb(7, 7, 12);
+    background-color: $space-bgc;
     overflow: hidden;
     &__sun {
         width: 30%;
@@ -174,7 +174,7 @@
         }
     }
     &__neptune {
-        width: 0.5%;
+        width: 0.9%;
         left: 80%;
         top: 34%;
         object-fit: contain;
@@ -183,8 +183,8 @@
         &--overlay {
             width: 2%;
             aspect-ratio: 1;
-            left: 79%;
-            top: 32%;
+            left: 80%;
+            top: 33%;
             z-index: 7;
             border-radius: 50%;
         }
@@ -274,7 +274,7 @@
     top: 0;
     pointer-events: none;
     font-weight: bold;
-    line-height: 140%;
+    line-height: $description-line-height;
     &__sun {
         position: inherit;
         width: 0vw;
@@ -283,6 +283,10 @@
         top: 5%;
         z-index: 7;
         overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
         }
     &__list--sun {
         display: block;
@@ -290,6 +294,7 @@
         width: 100%;
         list-style: none;
         background-color: $descriptionColor;
+        padding: 5px;
         }
     &__mercury {
         position: inherit;
@@ -299,6 +304,10 @@
         top: 50%;
         z-index: 7;
         overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
         }
     &__list--mercury {
         display: block;
@@ -306,6 +315,7 @@
         width: 100%;
         list-style: none;
         background-color: $descriptionColor;
+        padding: 5px;
     }
     &__venus {
         position: inherit;
@@ -315,6 +325,10 @@
         top: 17%;
         z-index: 7;
         overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
         }
     &__list--venus {
         display: block;
@@ -322,6 +336,7 @@
         width: 100%;
         list-style: none;
         background-color: $descriptionColor;
+        padding: 5px;
     }
     &__earth {
         position: inherit;
@@ -331,6 +346,10 @@
         top: 15%;
         z-index: 7;
         overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
         }
     &__list--earth {
         display: block;
@@ -338,6 +357,7 @@
         width: 100%;
         list-style: none;
         background-color: $descriptionColor;
+        padding: 5px;
     }
     &__mars {
         position: inherit;
@@ -347,6 +367,10 @@
         top: 30%;
         z-index: 7;
         overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
         }
     &__list--mars {
         display: block;
@@ -354,6 +378,7 @@
         width: 100%;
         list-style: none;
         background-color: $descriptionColor;
+        padding: 5px;
     }
     &__saturn {
         position: inherit;
@@ -363,6 +388,10 @@
         top: 5%;
         z-index: 7;
         overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
         }
     &__list--saturn {
         display: block;
@@ -370,6 +399,7 @@
         width: 100%;
         list-style: none;
         background-color: $descriptionColor;
+        padding: 5px;
     }
     &__jupiter {
         position: inherit;
@@ -379,6 +409,10 @@
         top: 5%;
         z-index: 7;
         overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
         }
     &__list--jupiter {
         display: block;
@@ -386,6 +420,7 @@
         width: 100%;
         list-style: none;
         background-color: $descriptionColor;
+        padding: 5px;
     }
     &__uranus {
         position: inherit;
@@ -395,6 +430,10 @@
         top: 20%;
         z-index: 7;
         overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
         }
     &__list--uranus {
         display: block;
@@ -402,6 +441,7 @@
         width: 100%;
         list-style: none;
         background-color: $descriptionColor;
+        padding: 5px;
     }
     &__neptune {
         position: inherit;
@@ -411,6 +451,10 @@
         top: 40%;
         z-index: 7;
         overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
         }
     &__list--neptune {
         display: block;
@@ -418,6 +462,7 @@
         width: 100%;
         list-style: none;
         background-color: $descriptionColor;
+        padding: 5px;
     }
 }
 
@@ -430,4 +475,5 @@
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
+    padding-bottom: 6px;
 }

@@ -1,8 +1,8 @@
-import Animator from './Animator.js';
+import BackgroundMove from './BackgroundMove.js';
 import Spinner from './Spinner.js';
 import Description from './Description.js';
 
-new Animator();
+new BackgroundMove();
 new Spinner(document.querySelector('.spinner'));
 new Description(document.querySelector('.space__sun--overlay'));
 new Description(document.querySelector('.space__mercury--overlay'));
