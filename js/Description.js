@@ -1,10 +1,11 @@
-export default class Description {
+import Animations from './Animations.js';
+
+export default class Description extends Animations {
   //   static #isPlaying = false;
   #celestialBody;
   #description;
   #data;
   #header;
-  #animation;
   #isHidden = true;
   #WIDTH = '15vw';
   #HIDDEN_WIDTH = '0vw';
@@ -12,8 +13,8 @@ export default class Description {
     NONE: 'none',
     BLOCK: 'block',
   };
-  #ANIMATION = {
-    NAME: 'scale',
+  ANIMATION = {
+    NAME: this.SCALE_BOUNCE.NAME,
     NO_NAME: 'none',
     DIRECTION: {
       NORMAL: 'normal',
@@ -23,8 +24,11 @@ export default class Description {
       RUNNING: 'running',
       PAUSED: 'paused',
     },
+    DURATION: '.1s',
+    TIMING_FUNCTION: 'linear',
   };
   constructor(selector) {
+    super();
     this.#celestialBody = selector;
     this.#description = document.querySelector(
       `.descriptions__${selector.dataset.name}`
@@ -45,6 +49,11 @@ export default class Description {
     this.#description.addEventListener('animationend', () => {
       this.#handleAnimEnd();
     });
+
+    this.#initAnimProperties({
+      delay: this.ANIMATION.DURATION,
+      timing: this.ANIMATION.TIMING_FUNCTION,
+    });
   }
 
   #initListener() {
@@ -62,21 +71,22 @@ export default class Description {
     // }
     this.widthNow = this.#WIDTH;
     this.#setAnimProperties({
-      name: this.#ANIMATION.NAME,
-      direction: this.#ANIMATION.DIRECTION.NORMAL,
-      playState: this.#ANIMATION.PLAY_STATE.RUNNING,
+      name: this.ANIMATION.NAME,
+      direction: this.ANIMATION.DIRECTION.NORMAL,
+      playState: this.ANIMATION.PLAY_STATE.RUNNING,
     });
     this.#setHeaderDisplay(this.#DISPLAY.BLOCK);
     this.#setDataDisplay(this.#DISPLAY.BLOCK);
 
     this.#isHidden = false;
+    console.log(getComputedStyle(this.#description));
   }
 
   #hideDescription() {
     this.#setAnimProperties({
-      name: this.#ANIMATION.NAME,
-      direction: this.#ANIMATION.DIRECTION.REVERSE,
-      playState: this.#ANIMATION.PLAY_STATE.RUNNING,
+      name: this.ANIMATION.NAME,
+      direction: this.ANIMATION.DIRECTION.REVERSE,
+      playState: this.ANIMATION.PLAY_STATE.RUNNING,
     });
     this.#setHeaderDisplay(this.#DISPLAY.NONE);
     this.#setDataDisplay(this.#DISPLAY.NONE);
@@ -108,6 +118,14 @@ export default class Description {
     this.#data.forEach((data) => (data.style.display = display));
   }
 
+  #setAnimDuration(duration) {
+    this.#description.style.animationDuration = duration;
+  }
+
+  #setAnimTiming(timing) {
+    this.#description.style.animationTimingFunction = timing;
+  }
+
   #setAnimProperties({ name, direction, playState }) {
     this.#setAnimName(name);
     this.#setAnimDirection(direction);
@@ -116,8 +134,8 @@ export default class Description {
 
   #handleAnimEnd() {
     this.#setAnimProperties({
-      name: this.#ANIMATION.NO_NAME,
-      playState: this.#ANIMATION.PLAY_STATE.PAUSED,
+      name: this.ANIMATION.NO_NAME,
+      playState: this.ANIMATION.PLAY_STATE.PAUSED,
     });
 
     this.#isHidden
@@ -125,6 +143,11 @@ export default class Description {
       : (this.widthNow = this.#WIDTH);
 
     // Description.#isPlaying = false;
+  }
+
+  #initAnimProperties({ delay, timing }) {
+    this.#setAnimDuration(delay);
+    this.#setAnimTiming(timing);
   }
 
   //   #handleAnimStart() {

@@ -35,7 +35,7 @@
     animation: spinner 1s infinite linear;
 }
 
-.bodies {
+.body {
     position: absolute;
     object-fit: none;
 }
@@ -265,12 +265,6 @@
     }
 }
 
-@keyframes scale {
-    from {
-        transform: scaleX(0);
-    }
-}
-
 .descriptions {
     position: absolute;
     z-index: 7;
@@ -283,13 +277,10 @@
     line-height: 140%;
     &__sun {
         position: inherit;
-        width: 15vw;
+        width: 0vw;
         height: 20vh;
         left: 75%;
         top: 5%;
-        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        animation-direction: normal;
-        animation-play-state: paused;
         z-index: 7;
         overflow: hidden;
         }
@@ -306,9 +297,6 @@
         height: 20vh;
         left: 50%;
         top: 50%;
-        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        animation-direction: normal;
-        animation-play-state: paused;
         z-index: 7;
         overflow: hidden;
         }
@@ -325,9 +313,6 @@
         height: 20vh;
         left: 80%;
         top: 17%;
-        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        animation-direction: normal;
-        animation-play-state: paused;
         z-index: 7;
         overflow: hidden;
         }
@@ -344,9 +329,6 @@
         height: 20vh;
         left: 82%;
         top: 15%;
-        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        animation-direction: normal;
-        animation-play-state: paused;
         z-index: 7;
         overflow: hidden;
         }
@@ -363,9 +345,6 @@
         height: 20vh;
         left: 30%;
         top: 30%;
-        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        animation-direction: normal;
-        animation-play-state: paused;
         z-index: 7;
         overflow: hidden;
         }
@@ -382,9 +361,6 @@
         height: 20vh;
         left: 30%;
         top: 5%;
-        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        animation-direction: normal;
-        animation-play-state: paused;
         z-index: 7;
         overflow: hidden;
         }
@@ -401,9 +377,6 @@
         height: 20vh;
         left: 30%;
         top: 5%;
-        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        animation-direction: normal;
-        animation-play-state: paused;
         z-index: 7;
         overflow: hidden;
         }
@@ -420,9 +393,6 @@
         height: 20vh;
         left: 82%;
         top: 20%;
-        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        animation-direction: normal;
-        animation-play-state: paused;
         z-index: 7;
         overflow: hidden;
         }
@@ -439,9 +409,6 @@
         height: 20vh;
         left: 82%;
         top: 40%;
-        animation: scale .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        animation-direction: normal;
-        animation-play-state: paused;
         z-index: 7;
         overflow: hidden;
         }
