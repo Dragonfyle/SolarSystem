@@ -3,7 +3,7 @@ export default class Spinner {
   #overlay;
   constructor(selector) {
     this.#overlay = document.querySelector('.overlay');
-    this.#spinner = document.querySelector(selector);
+    this.#spinner = selector;
     window.addEventListener('DOMContentLoaded', () => this.#displayLoading());
     window.addEventListener('load', () => this.#hideLoading());
   }

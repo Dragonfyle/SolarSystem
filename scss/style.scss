@@ -2,7 +2,6 @@
 
 @keyframes spinner {
     100% {
-        // transform: translate(-50%, -50%);
         transform: rotate(360deg);
     }
 }
@@ -10,6 +9,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .overlay {
@@ -17,7 +17,7 @@
     z-index: 5;
     width: 100%;
     height: 100%;
-    background-color: wheat;
+    background-color: $overlay-bgc;
 }
 
 .spinner {
@@ -27,24 +27,24 @@
     aspect-ratio: 1;
     left: 46%;
     top: 46%;
-    border-top: solid 10px beige;
-    border-bottom: solid 10px beige;
-    border-left: solid 10px beige;
-    border-right: solid 10px black;
+    border-top: $spinner-border-regular;
+    border-bottom: $spinner-border-regular;
+    border-left: $spinner-border-regular;
+    border-right: $spinner-border-mark;
     border-radius: 50%;
     animation: spinner 1s infinite linear;
 }
 
-.bodies {
+.body {
     position: absolute;
     object-fit: none;
 }
 
-.background {
+.space {
     position: relative;
     height: 100vh;
     width: 100vw;
-    background-color: rgb(7, 7, 12);
+    background-color: $space-bgc;
     overflow: hidden;
     &__sun {
         width: 30%;
@@ -52,6 +52,15 @@
         top: 20%;
         object-fit: contain;
         z-index: 1;
+        border-radius: 50%;
+        &--overlay {
+            width: 24%;
+            aspect-ratio: 1;
+            left: 52.5%;
+            top: 25%;
+            z-index: 7;
+            border-radius: 50%;
+        }
     }
     &__mercury {
         width: 0.5%;
@@ -59,18 +68,45 @@
         top: 51%;
         object-fit: contain;
         z-index: 2;
+        border-radius: 50%;
+        &--overlay {
+            width: 1.6%;
+            aspect-ratio: 1;
+            left: 72.5%;
+            top: 50.5%;
+            z-index: 7;
+            border-radius: 50%;
+        }
     }
     &__venus {
         width: 1.1%;
         left: 78%;
-        top: 49%;
+        top: 47%;
         object-fit: contain;
+        border-radius: 50%;
+        &--overlay {
+            width: 2%;
+            aspect-ratio: 1;
+            left: 79%;
+            top: 46%;
+            z-index: 7;
+            border-radius: 50%;
+        }
     }
     &__earth {
         width: 1.4%;
         left: 82.9%;
         top: 50%;
         object-fit: contain;
+        border-radius: 50%;
+        &--overlay {
+            width: 2%;
+            aspect-ratio: 1;
+            left: 83.2%;
+            top: 50%;
+            z-index: 7;
+            border-radius: 50%;
+        }
     }
     &__mars {
         width: 0.7%;
@@ -78,13 +114,31 @@
         top: 49%;
         object-fit: contain;
         z-index: 0;
+        border-radius: 50%;
+        &--overlay {
+            width: 2%;
+            aspect-ratio: 1;
+            left: 50.5%;
+            top: 47%;
+            z-index: 7;
+            border-radius: 50%;
+        }
     }
     &__jupiter {
-        width: 23%;
+        width: 19%;
         left: 9%;
-        top: 26%;
+        top: 31%;
         object-fit: contain;
         z-index: 3;
+        border-radius: 50%;
+        &--overlay {
+            width: 18%;
+            aspect-ratio: 1;
+            left: 9.5%;
+            top: 31.5%;
+            z-index: 7;
+            border-radius: 50%;
+        }
     }
     &__saturn {
         width: 9%;
@@ -92,6 +146,16 @@
         top: 30%;
         object-fit: contain;
         z-index: 0;
+        border-radius: 50%;
+        border-top-left-radius: 0%;
+        &--overlay {
+            width: 9%;
+            aspect-ratio: 1;
+            left: 44.5%;
+            top: 29%;
+            z-index: 7;
+            border-radius: 50%;
+        }
     }
     &__uranus {
         width: 12%;
@@ -99,39 +163,58 @@
         top: 50%;
         object-fit: contain;
         z-index: 2;
+        border-radius: 50%;
+        &--overlay {
+            width: 12%;
+            aspect-ratio: 1;
+            left: 80%;
+            top: 50%;
+            z-index: 7;
+            border-radius: 50%;
+        }
     }
     &__neptune {
-        width: 0.5%;
+        width: 0.9%;
         left: 80%;
         top: 34%;
         object-fit: contain;
         z-index: 0;
+        border-radius: 50%;
+        &--overlay {
+            width: 2%;
+            aspect-ratio: 1;
+            left: 80%;
+            top: 33%;
+            z-index: 7;
+            border-radius: 50%;
+        }
     }
     &__jupiter-moon1 { 
         width: 1.3%;
-        left: 8%;
-        top: 48%;
+        left: 8.5%;
+        top: 51%;
         object-fit: contain;
         z-index: 2;
     }
     &__jupiter-moon2 { 
         width: 1.3%;
-        left: 11%;
-        top: 48%;
+        left: 14%;
+        top: 51%;
         object-fit: contain;
         z-index: 4;
+        
     }
     &__jupiter-moon3 { 
         width: 1.3%;
-        left: 33%;
-        top: 48%;
+        left: 28%;
+        top: 49.5%;
         object-fit: contain;
         z-index: 1;
     }
     &__jupiter-moon4 { 
         width: 1%;
-        left: 31.5%;
-        top: 48%;
+        left: 27.5%;
+        top: 49%;
         object-fit: contain;
         z-index: 2;
     }
@@ -142,29 +225,255 @@
         object-fit: contain;
         z-index: 0;
     }
+    &__stars {
+        pointer-events: none;
+    }
     &__stars--layer1 {
         z-index: 1;
         left: -45%;
         top: -45%;
+        pointer-events: none;
+
     }
     &__stars--layer2 {
         z-index: 2;
         left: -35%;
         top: -35%;
+        pointer-events: none;
+
     }
     &__stars--layer3 {
         z-index: 3;
         left: -25%;
         top: -25%;
+        pointer-events: none;
+
     }
     &__stars--layer4 {
         z-index: 4;
         left: -10%;
         top: -10%;
+        pointer-events: none;
+
     }
     &__stars--layer5 {
         z-index: 4;
         left: 0;
         top: 0;
+        pointer-events: none;
+
     }
+}
+
+.descriptions {
+    position: absolute;
+    z-index: 7;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    font-weight: bold;
+    line-height: $description-line-height;
+    &__sun {
+        position: inherit;
+        width: 0vw;
+        height: 20vh;
+        left: 75%;
+        top: 5%;
+        z-index: 7;
+        overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
+        }
+    &__list--sun {
+        display: block;
+        height: 100%;
+        width: 100%;
+        list-style: none;
+        background-color: $descriptionColor;
+        padding: 5px;
+        }
+    &__mercury {
+        position: inherit;
+        width: 0vw;
+        height: 20vh;
+        left: 50%;
+        top: 50%;
+        z-index: 7;
+        overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
+        }
+    &__list--mercury {
+        display: block;
+        height: 100%;
+        width: 100%;
+        list-style: none;
+        background-color: $descriptionColor;
+        padding: 5px;
+    }
+    &__venus {
+        position: inherit;
+        width: 0vw;
+        height: 20vh;
+        left: 80%;
+        top: 17%;
+        z-index: 7;
+        overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
+        }
+    &__list--venus {
+        display: block;
+        height: 100%;
+        width: 100%;
+        list-style: none;
+        background-color: $descriptionColor;
+        padding: 5px;
+    }
+    &__earth {
+        position: inherit;
+        width: 0vw;
+        height: 20vh;
+        left: 82%;
+        top: 15%;
+        z-index: 7;
+        overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
+        }
+    &__list--earth {
+        display: block;
+        height: 100%;
+        width: 100%;
+        list-style: none;
+        background-color: $descriptionColor;
+        padding: 5px;
+    }
+    &__mars {
+        position: inherit;
+        width: 0vw;
+        height: 20vh;
+        left: 30%;
+        top: 30%;
+        z-index: 7;
+        overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
+        }
+    &__list--mars {
+        display: block;
+        height: 100%;
+        width: 100%;
+        list-style: none;
+        background-color: $descriptionColor;
+        padding: 5px;
+    }
+    &__saturn {
+        position: inherit;
+        width: 0vw;
+        height: 20vh;
+        left: 30%;
+        top: 5%;
+        z-index: 7;
+        overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
+        }
+    &__list--saturn {
+        display: block;
+        height: 100%;
+        width: 100%;
+        list-style: none;
+        background-color: $descriptionColor;
+        padding: 5px;
+    }
+    &__jupiter {
+        position: inherit;
+        width: 0vw;
+        height: 20vh;
+        left: 30%;
+        top: 5%;
+        z-index: 7;
+        overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
+        }
+    &__list--jupiter {
+        display: block;
+        height: 100%;
+        width: 100%;
+        list-style: none;
+        background-color: $descriptionColor;
+        padding: 5px;
+    }
+    &__uranus {
+        position: inherit;
+        width: 0vw;
+        height: 20vh;
+        left: 82%;
+        top: 20%;
+        z-index: 7;
+        overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
+        }
+    &__list--uranus {
+        display: block;
+        height: 100%;
+        width: 100%;
+        list-style: none;
+        background-color: $descriptionColor;
+        padding: 5px;
+    }
+    &__neptune {
+        position: inherit;
+        width: 0vw;
+        height: 20vh;
+        left: 82%;
+        top: 40%;
+        z-index: 7;
+        overflow: hidden;
+        border-color: $border-color;
+        border-width: 4px;
+        border-style: none;
+        border-radius: 4px;
+        }
+    &__list--neptune {
+        display: block;
+        height: 100%;
+        width: 100%;
+        list-style: none;
+        background-color: $descriptionColor;
+        padding: 5px;
+    }
+}
+
+.data {
+    display: none;
+}
+
+.header {
+    display: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 6px;
 }
