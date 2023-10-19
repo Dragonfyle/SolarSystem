@@ -2,21 +2,38 @@ import BackgroundMove from './BackgroundMove.js';
 import Spinner from './Spinner.js';
 import Description from './Description.js';
 
-new BackgroundMove();
-new Spinner(document.querySelector('.spinner'));
-new Description(document.querySelector('.space__sun--overlay'));
-new Description(document.querySelector('.space__mercury--overlay'));
-new Description(document.querySelector('.space__venus--overlay'));
-new Description(document.querySelector('.space__earth--overlay'));
-new Description(document.querySelector('.space__mars--overlay'));
-new Description(document.querySelector('.space__saturn--overlay'));
-new Description(document.querySelector('.space__jupiter--overlay'));
-new Description(document.querySelector('.space__uranus--overlay'));
-new Description(document.querySelector('.space__neptune--overlay'));
+class Main {
+  #BODIES = {
+    SUN: 'sun',
+    MERCURY: 'mercury',
+    VENUS: 'venus',
+    EARTH: 'earth',
+    MARS: 'mars',
+    SATURN: 'saturn',
+    JUPITER: 'jupiter',
+    URANUS: 'uranus',
+    NEPTUNE: 'neptune',
+  };
+  #spinnerElement = document.querySelector('.spinner');
 
-// class Main {
-// constructor() {
-// window.addEventListener('DOMContentLoaded', this.#init);
-// }
-// #init() {}
-// }
+  constructor() {
+    window.addEventListener('DOMContentLoaded', () => {
+      this.#init();
+    });
+  }
+  #init() {
+    new BackgroundMove();
+    new Spinner(this.#spinnerElement);
+    new Description(this.#BODIES.SUN);
+    new Description(this.#BODIES.MERCURY);
+    new Description(this.#BODIES.VENUS);
+    new Description(this.#BODIES.EARTH);
+    new Description(this.#BODIES.MARS);
+    new Description(this.#BODIES.SATURN);
+    new Description(this.#BODIES.JUPITER);
+    new Description(this.#BODIES.URANUS);
+    new Description(this.#BODIES.NEPTUNE);
+  }
+}
+
+new Main();
