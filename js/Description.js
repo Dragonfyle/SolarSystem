@@ -6,6 +6,7 @@ export default class Description extends Animations {
   #description;
   #data;
   #header;
+  #overlay;
   #isHidden = true;
   #WIDTH = '15vw';
   #HIDDEN_WIDTH = '0vw';
@@ -33,17 +34,20 @@ export default class Description extends Animations {
       SOLID: 'solid',
     },
   };
-  constructor(selector) {
+  constructor(name) {
     super();
-    this.#celestialBody = selector;
+    this.#celestialBody = name;
     this.#description = document.querySelector(
-      `.descriptions__${selector.dataset.name}`
+      `.descriptions__${this.#celestialBody}`
     );
     this.#data = document.querySelectorAll(
-      `.descriptions__data--${selector.dataset.name}`
+      `.descriptions__data--${this.#celestialBody}`
     );
     this.#header = document.querySelector(
-      `.descriptions__header--${selector.dataset.name}`
+      `.descriptions__header--${this.#celestialBody}`
+    );
+    this.#overlay = document.querySelector(
+      `.space__${this.#celestialBody}--overlay`
     );
 
     window.addEventListener('load', () => {
@@ -64,10 +68,10 @@ export default class Description extends Animations {
   }
 
   #initListener() {
-    this.#celestialBody.addEventListener('mouseover', () => {
+    this.#overlay.addEventListener('mouseover', () => {
       this.#showDescription();
     });
-    this.#celestialBody.addEventListener('mouseout', () => {
+    this.#overlay.addEventListener('mouseout', () => {
       this.#hideDescription();
     });
   }
